@@ -10,7 +10,6 @@ class App extends Component{
         <Appbar />
         <img src={require('./images/dog-unsplash.jpg')} alt="" width="100%" />
         <ProfileCardDemo />
-        <ProfileCardDemo />
       </div>
     );
   }

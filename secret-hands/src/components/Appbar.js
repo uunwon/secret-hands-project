@@ -11,11 +11,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import PetsRoundedIcon from '@material-ui/icons/PetsRounded';
-import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import DomainIcon from '@material-ui/icons/Domain';
-import { purple } from '@material-ui/core/colors';
+import Avatar from '@material-ui/core/Avatar';
+import Logo from '../images/logo.png'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -103,30 +103,23 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton
           color="inherit" >
-          <HomeIcon />
-        </IconButton>
-        <p>HOME</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          color="inherit" >
           <PetsRoundedIcon />
         </IconButton>
-        <p>소개</p>
+        <p>단체용</p>
       </MenuItem>
       <MenuItem>
         <IconButton
           color="inherit" >
           <MenuIcon />
         </IconButton>
-        <p>후원 목록</p>
+        <p>후원 내역</p>
       </MenuItem>
       <MenuItem>
         <IconButton
           color="inherit" >
           <DomainIcon />
         </IconButton>
-        <p>등록 기관</p>
+        <p>봉사 내역</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -160,17 +153,16 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <PetsRoundedIcon />
+            <Avatar src={Logo} />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             Secret hands
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button className={classes.button} color="inherit">HOME</Button>
-            <Button className={classes.button} color="inherit">서비스 소개</Button>
-            <Button className={classes.button} color="inherit">후원 목록</Button>
-            <Button className={classes.button} color="inherit">등록 기관</Button>
+            <Button className={classes.button} color="inherit">단체용</Button>
+            <Button className={classes.button} color="inherit">후원 내역</Button>
+            <Button className={classes.button} color="inherit">봉사 내역</Button>
             <IconButton
               edge="end"
               aria-label="account of current user"
