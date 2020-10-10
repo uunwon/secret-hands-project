@@ -13,9 +13,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Appbar from "./Appbar";
-import App from "../App";
-
+import {purple} from '@material-ui/core/colors';
+import logo from '../image/user_logo.png';
 
 function Copyright() {
     return (
@@ -56,9 +55,7 @@ export default function SignIn() {
         <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-                <Avatar className={classes.avatar}>
-                    {/*<LockOutlinedIcon />*/}
-                </Avatar>
+                <Avatar className={classes.avatar} alt="user_logo" src={logo} />
                 <Typography component="h1" variant="h5">
                     로그인
                 </Typography>
@@ -86,10 +83,12 @@ export default function SignIn() {
                         autoComplete="current-password"
                     />
                     <div style={{ padding: 10 }}>
-                        <Grid container spacing={5}>
+                        <Grid container>
                         </Grid>
                     </div>
                     <Grid container>
+                        <Grid item xs={2}>
+                        </Grid>
                         <Grid item xs>
                             <FacebookIcon fontSize="large" color="primary"/>
                         </Grid>
@@ -100,12 +99,12 @@ export default function SignIn() {
                             <RiKakaoTalkFill size={35} style={{fill: 'black'}}/>
                         </Grid>
                     </Grid>
-
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
-                        color="secondary"
+                        style={{backgroundColor:purple[300],
+                        color:"white"}}
                         className={classes.submit}
                     >
                         로그인
@@ -119,7 +118,7 @@ export default function SignIn() {
                         </Grid>
                         <Grid item xs={6}></Grid>
                         <Grid item xs>
-                            <Link href="#" variant="body2">
+                            <Link href="SignUp" variant="body2">
                                 {" 회원가입"}
                             </Link>
                         </Grid>
