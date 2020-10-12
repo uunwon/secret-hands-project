@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import SignIn from "./components/SignIn";
 import Appbar from './components/Appbar'
-import ProfileCardDemo from './components/Card'
+import Card from './components/Card'
 import './App.css';
 
 class App extends Component{
   render = () => {
     return (
       <div className="App">
-        <Appbar />
-        <img src={require('./images/dog-unsplash.jpg')} alt="" width="100%" />
-        <ProfileCardDemo />
+        <Router>
+          <Appbar />
+          <Route exact path="/" component={Card}/>
+          <Route path="/SignIn" component={SignIn}/>
+        </Router>
       </div>
     );
   }

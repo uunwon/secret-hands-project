@@ -1,5 +1,6 @@
 import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -122,7 +123,7 @@ export default function PrimarySearchAppBar() {
         <p>봉사 내역</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
+      <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
@@ -130,7 +131,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p><Link to = "/SignIn" style={{textDecoration: 'none', color:'inherit'}}>Profile</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 12 new notifications" color="inherit">
@@ -147,23 +148,25 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" color="#000000">
         <Toolbar>
-          <IconButton
+        <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
-            <Avatar src={Logo} />
+            <Link to = "/" ><Avatar src={Logo} /></Link>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Secret hands
+          <Link to = "/" style={{ textDecoration: 'none' }}>Secret hands</Link>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button className={classes.button} color="inherit">단체용</Button>
+            <Button className={classes.button} color="inherit">
+              단체용
+            </Button>
             <Button className={classes.button} color="inherit">후원 내역</Button>
             <Button className={classes.button} color="inherit">봉사 내역</Button>
-            <IconButton
+            <Link to = "/SignIn" style={{color: 'inherit'}}><IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -172,7 +175,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
+            </IconButton></Link>
             <IconButton aria-label="show 12 new notifications" color="inherit">
               <Badge badgeContent={12} color="secondary">
                 <NotificationsIcon />
