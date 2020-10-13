@@ -113,14 +113,14 @@ export default function PrimarySearchAppBar() {
           color="inherit" >
           <MenuIcon />
         </IconButton>
-        <p>후원 내역</p>
+        <p><Link to = "/MyDonation" style={{textDecoration: 'none', color:'inherit'}}>후원 내역</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton
           color="inherit" >
           <DomainIcon />
         </IconButton>
-        <p>봉사 내역</p>
+        <p><Link to = "/MySupport" style={{textDecoration: 'none', color:'inherit'}}>봉사 내역</Link></p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
       <IconButton
@@ -164,8 +164,10 @@ export default function PrimarySearchAppBar() {
             <Button className={classes.button} color="inherit">
               단체용
             </Button>
-            <Button className={classes.button} color="inherit">후원 내역</Button>
-            <Button className={classes.button} color="inherit">봉사 내역</Button>
+            <Button className={classes.button} color="inherit">
+              <Link to = "/MyDonation" style={{ textDecoration: 'none' }}>후원 내역</Link></Button>
+            <Button className={classes.button} color="inherit">
+              <Link to = "/MySupport" style={{ textDecoration: 'none' }}>봉사 내역</Link></Button>
             <Link to = "/SignIn" style={{color: 'inherit'}}><IconButton
               edge="end"
               aria-label="account of current user"

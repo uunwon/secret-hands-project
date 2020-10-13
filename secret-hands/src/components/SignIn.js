@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouteLink } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,12 +10,11 @@ import Box from '@material-ui/core/Box';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import {FcGoogle} from "react-icons/fc";
 import {RiKakaoTalkFill} from "react-icons/ri";
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {purple} from '@material-ui/core/colors';
-import logo from '../image/user_logo.png';
+import logo from '../images/logo.png';
 
 function Copyright() {
     return (
@@ -112,15 +112,15 @@ export default function SignIn() {
 
                     <Grid container>
                         <Grid item>
-                            <Link href="#" variant="body2">
+                            <RouteLink to="#" variant="body2" style={{textDecoration:'none'}}>
                             아이디/비밀번호 찾기
-                            </Link>
+                            </RouteLink>
                         </Grid>
                         <Grid item xs={6}></Grid>
                         <Grid item xs>
-                            <Link href="SignUp" variant="body2">
+                            <RouteLink to="SignUp" variant="body2" style={{textDecoration:'none'}}>
                                 {" 회원가입"}
-                            </Link>
+                            </RouteLink>
                         </Grid>
                     </Grid>
                 </form>

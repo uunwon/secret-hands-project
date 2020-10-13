@@ -10,11 +10,7 @@ import Box from '@material-ui/core/Box';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Card from "./Card"
-import logo from "../image/user_logo.png";
-import {purple} from "@material-ui/core/colors";
-import Button from "@material-ui/core/Button";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

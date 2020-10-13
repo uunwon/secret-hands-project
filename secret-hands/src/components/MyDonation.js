@@ -1,6 +1,5 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import purple from '@material-ui/core/colors/purple';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
@@ -8,10 +7,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
-import logo from "../image/user_logo.png";
+import logo from '../images/logo.png';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -109,15 +108,15 @@ export default function MyDonation() {
                 </Grid>
                 <Grid item xs={12}>
                     <Paper className={classes.paper2}>
-                        <img src={logo} width={40}/>
+                        <img src={logo} width={40} alt=""/>
                         <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
                     </Paper>
                     <Paper className={classes.paper2}>
-                        <img src={logo} width={40}/>
+                        <img src={logo} width={40} alt=""/>
                         <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
                     </Paper>
                     <Paper className={classes.paper2}>
-                        <img src={logo} width={40}/>
+                        <img src={logo} width={40} alt=""/>
                         <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
                     </Paper>
                 </Grid>
