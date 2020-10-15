@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SignIn from "./components/SignIn";
 import SignUp from './components/SignUp';
 import Appbar from './components/Appbar';
-import CardView from './components/CardView';
+import CardView from './components/CardView2';
 import MyDonation from './components/MyDonation';
 import MySupport from './components/MySupport';
 import './App.css';

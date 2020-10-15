@@ -51,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  link: {
+    textDecoration: 'none',
+    color:'inherit',
+  },
 }));
 
 export default function PrimarySearchAppBar() {
@@ -113,14 +117,14 @@ export default function PrimarySearchAppBar() {
           color="inherit" >
           <MenuIcon />
         </IconButton>
-        <p><Link to = "/MyDonation" style={{textDecoration: 'none', color:'inherit'}}>후원 내역</Link></p>
+        <p><Link to = "/MyDonation" className={classes.link}>후원 내역</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton
           color="inherit" >
           <DomainIcon />
         </IconButton>
-        <p><Link to = "/MySupport" style={{textDecoration: 'none', color:'inherit'}}>봉사 내역</Link></p>
+        <p><Link to = "/MySupport" className={classes.link}>봉사 내역</Link></p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
       <IconButton
@@ -131,7 +135,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p><Link to = "/SignIn" style={{textDecoration: 'none', color:'inherit'}}>Profile</Link></p>
+        <p><Link to = "/SignIn" className={classes.link}>Profile</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 12 new notifications" color="inherit">
@@ -157,7 +161,7 @@ export default function PrimarySearchAppBar() {
             <Link to = "/" ><Avatar src={Logo} /></Link>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-          <Link to = "/" style={{ textDecoration: 'none' }}>Secret hands</Link>
+          <Link to = "/" className={classes.link}>Secret hands</Link>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -165,9 +169,9 @@ export default function PrimarySearchAppBar() {
               단체용
             </Button>
             <Button className={classes.button} color="inherit">
-              <Link to = "/MyDonation" style={{ textDecoration: 'none' }}>후원 내역</Link></Button>
+              <Link to = "/MyDonation" className={classes.link}>후원 내역</Link></Button>
             <Button className={classes.button} color="inherit">
-              <Link to = "/MySupport" style={{ textDecoration: 'none' }}>봉사 내역</Link></Button>
+              <Link to = "/MySupport" className={classes.link}>봉사 내역</Link></Button>
             <Link to = "/SignIn" style={{color: 'inherit'}}><IconButton
               edge="end"
               aria-label="account of current user"
