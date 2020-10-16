@@ -41,12 +41,6 @@ const useStyles = makeStyles(() => ({
         fontWeight: 'bold',
         fontFamily: 'JSDongkang-Bold',
       },
-      date: {
-        display: 'inline',
-        color: '#ffff00',
-        fontWeight: 'bold',
-        fontSize: '1.2rem',
-      },
       subButton:{
         backgroundColor: '#ffff00 !important',
         color: '#000000',
@@ -57,6 +51,14 @@ const useStyles = makeStyles(() => ({
         minHeight: 42,
         fontSize: '1rem',
         fontWeight: 700,
+        fontFamily: 'JSDongkang-Bold',
+      },
+      date: {
+        display: 'inline',
+        marginTop: 5,
+        color: '#ffff00',
+        fontWeight: 'bold',
+        fontSize: '1.2rem',
         fontFamily: 'JSDongkang-Bold',
       },
       detailButton: {
@@ -108,10 +110,15 @@ export default function FullWidthGrid() {
             <Card
                 className={cx(styles.card, shadowStyles.root)}
                 style={{ backgroundImage: `url(${require("../images/main-dog1.png")})` }}>
-                <Column gap={3} mr={2}>
-                    <Info position={'left'} useStyles={useOfferInfoStyles}>
-                        <Button className={styles.subButton}>실외</Button>
-                        <Button className={styles.subButton}>산책하기</Button>
+                <Column gap={3} mr={1}>
+                    <Info>
+                      <Grid container justify="space-between"> 
+                          <div>
+                            <Button className={styles.subButton}>실외</Button>
+                            <Button className={styles.subButton}>산책하기</Button>
+                          </div>
+                          <Typography className={styles.date}>D-6</Typography>
+                      </Grid>
                     </Info>
                     <Item mt={12}>
                         <Button className={styles.detailButton}>서초구 | 4명 참여 / 5명 | 1만 원</Button>
@@ -125,9 +132,14 @@ export default function FullWidthGrid() {
                 className={cx(styles.card, shadowStyles.root)}
                 style={{ backgroundImage: `url(${require("../images/main-dog2.png")})` }}>
                 <Column gap={3} mr={2}>
-                    <Info position={'left'} useStyles={useOfferInfoStyles}>
-                        <Button className={styles.subButton}>실외</Button>
-                        <Button className={styles.subButton}>산책하기</Button>
+                    <Info>
+                      <Grid container justify="space-between"> 
+                          <div>
+                            <Button className={styles.subButton}>실외</Button>
+                            <Button className={styles.subButton}>산책하기</Button>
+                          </div>
+                          <Typography className={styles.date}>D-3</Typography>
+                      </Grid>
                     </Info>
                     <Item mt={12}>
                         <Button className={styles.detailButton}>도봉구 | 7명 참여 / 8명 | 5천 원</Button>
@@ -141,10 +153,14 @@ export default function FullWidthGrid() {
                 className={cx(styles.card, shadowStyles.root)}
                 style={{ backgroundImage: `url(${require("../images/main-dog3.png")})` }}>
                 <Column gap={3} mr={2}>
-                    <Info position={'left'} useStyles={useOfferInfoStyles}>
-                        <Button className={styles.subButton}>실내</Button>
-                        <Button className={styles.subButton}>사무보조</Button>
-                        <Typography className={styles.date}>D-4</Typography>
+                    <Info>
+                      <Grid container justify="space-between"> 
+                          <div>
+                            <Button className={styles.subButton}>실내</Button>
+                            <Button className={styles.subButton}>사무보조</Button>
+                          </div>
+                          <Typography className={styles.date}>D-4</Typography>
+                      </Grid>
                     </Info>
                     <Item mt={12}>
                         <Button className={styles.detailButton}>성동구 | 1명 참여 / 5명 | 5천 원</Button>
@@ -159,9 +175,14 @@ export default function FullWidthGrid() {
                 className={cx(styles.card, shadowStyles.root)}
                 style={{ backgroundImage: `url(${require("../images/main-dog4.png")})` }}>
                 <Column gap={3} mr={2}>
-                    <Info position={'left'} useStyles={useOfferInfoStyles}>
-                        <Button className={styles.subButton}>실내</Button>
-                        <Button className={styles.subButton}>청소하기</Button>
+                    <Info>
+                      <Grid container justify="space-between"> 
+                          <div>
+                            <Button className={styles.subButton}>실내</Button>
+                            <Button className={styles.subButton}>청소하기</Button>
+                          </div>
+                          <Typography className={styles.date}>D-10</Typography>
+                      </Grid>
                     </Info>
                     <Item mt={12}>
                         <Button className={styles.detailButton}>성동구 | 2명 참여 / 3명 | 5천 원</Button>
@@ -175,9 +196,14 @@ export default function FullWidthGrid() {
                 className={cx(styles.card, shadowStyles.root)}
                 style={{ backgroundImage: `url(${require("../images/main-dog5.png")})` }}>
                 <Column gap={3} mr={2}>
-                    <Info position={'left'} useStyles={useOfferInfoStyles}>
-                        <Button className={styles.subButton}>실내</Button>
-                        <Button className={styles.subButton}>목욕하기</Button>
+                    <Info>
+                      <Grid container justify="space-between"> 
+                          <div>
+                            <Button className={styles.subButton}>실내</Button>
+                            <Button className={styles.subButton}>목욕하기</Button>
+                          </div>
+                          <Typography className={styles.date}>D-15</Typography>
+                      </Grid>
                     </Info>
                     <Item mt={12}>
                         <Button className={styles.detailButton}>관악구 | 4명 참여 / 5명 | 1만 원</Button>
@@ -191,9 +217,14 @@ export default function FullWidthGrid() {
                 className={cx(styles.card, shadowStyles.root)}
                 style={{ backgroundImage: `url(${require("../images/main-dog6.png")})` }}>
                 <Column gap={3} mr={2}>
-                    <Info position={'left'} useStyles={useOfferInfoStyles}>
-                        <Button className={styles.subButton}>실내</Button>
-                        <Button className={styles.subButton}>먹이주기</Button>
+                    <Info>
+                      <Grid container justify="space-between"> 
+                          <div>
+                            <Button className={styles.subButton}>실내</Button>
+                            <Button className={styles.subButton}>먹이주기</Button>
+                          </div>
+                          <Typography className={styles.date}>D-20</Typography>
+                      </Grid>
                     </Info>
                     <Item mt={12}>
                         <Button className={styles.detailButton}>종로구 | 1명 참여 / 5명 | 5천 원</Button>
