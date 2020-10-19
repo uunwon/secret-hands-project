@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import { makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
+import Appbar from './Appbar';
 import Box from '@material-ui/core/Box';
 import logo from '../images/logo.png';
 
@@ -80,48 +81,51 @@ export default function MyDonation() {
     };
 
     return (
-        <React.Fragment>
-            <CssBaseline />
-            <Container maxWidth="lg" >
-                <AppBar className={classes.paper} position="static" color="default">
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        indicatorColor="secondary"
-                        variant="fullWidth"
-                        aria-label="full width tabs"
-                    >
-                        <Tab label="" disabled />
-                        <Tab label="후원목록" {...a11yProps(1)}
-                             style={{color:"black"}}/>
-                        <Tab label="" disabled />
-                    </Tabs>
-                </AppBar>
-                <Grid container spacing={3}>
-                    <Grid item xs></Grid>
-                    <Grid item xs>
-                        <Paper className={classes.paper1} elevation={0} text>
-                            총 후원금액 10,000 원
+        <div>
+            <Appbar />   
+            <React.Fragment>
+                <CssBaseline />
+                <Container maxWidth="lg" >
+                    <AppBar className={classes.paper} position="static" color="default">
+                        <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            indicatorColor="secondary"
+                            variant="fullWidth"
+                            aria-label="full width tabs"
+                        >
+                            <Tab label="" disabled />
+                            <Tab label="후원목록" {...a11yProps(1)}
+                                style={{color:"black"}}/>
+                            <Tab label="" disabled />
+                        </Tabs>
+                    </AppBar>
+                    <Grid container spacing={3}>
+                        <Grid item xs></Grid>
+                        <Grid item xs>
+                            <Paper className={classes.paper1} elevation={0} text>
+                                총 후원금액 10,000 원
+                            </Paper>
+                        </Grid>
+                        <Grid item xs></Grid>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Paper className={classes.paper2}>
+                            <img src={logo} width={40} alt=""/>
+                            <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
+                        </Paper>
+                        <Paper className={classes.paper2}>
+                            <img src={logo} width={40} alt=""/>
+                            <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
+                        </Paper>
+                        <Paper className={classes.paper2}>
+                            <img src={logo} width={40} alt=""/>
+                            <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
                         </Paper>
                     </Grid>
-                    <Grid item xs></Grid>
-                </Grid>
-                <Grid item xs={12}>
-                    <Paper className={classes.paper2}>
-                        <img src={logo} width={40} alt=""/>
-                        <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
-                    </Paper>
-                    <Paper className={classes.paper2}>
-                        <img src={logo} width={40} alt=""/>
-                        <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
-                    </Paper>
-                    <Paper className={classes.paper2}>
-                        <img src={logo} width={40} alt=""/>
-                        <p>2020년9월 5일 희망 보호소 10,000원 후원</p>
-                    </Paper>
-                </Grid>
 
-            </Container>
-        </React.Fragment>
+                </Container>
+            </React.Fragment>
+        </div>
     );
 }

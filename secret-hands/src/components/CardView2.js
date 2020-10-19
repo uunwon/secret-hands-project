@@ -7,11 +7,10 @@ import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded';
 import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBordered';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import Appbar from './Appbar';
 import { Column, Item } from '@mui-treasury/components/flex';
 import { Info } from '@mui-treasury/components/info';
 import '../index.css'
-
-const family = 'Rubik';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -73,23 +72,6 @@ const useStyles = makeStyles(() => ({
       },
 }));
 
-const useOfferInfoStyles = makeStyles(() => {
-    return {
-      title: {
-        color: '#fb703c',
-        fontSize: '1.125rem',
-        fontFamily: family,
-        fontWeight: 700,
-      },
-      subtitle: {
-        color: '#48bbb5',
-        fontSize: '0.875rem',
-        fontFamily: family,
-        fontWeight: 500,
-      },
-    };
-  });
-
 export default function FullWidthGrid() {
   const styles = useStyles();
   const shadowStyles = useFadedShadowStyles();
@@ -100,6 +82,7 @@ export default function FullWidthGrid() {
 
   return (
     <div>
+      <Appbar />
       <img src={require('../images/banner.png')} alt="" width="100%" />
       
       <div className={styles.root}>
@@ -117,7 +100,7 @@ export default function FullWidthGrid() {
                             <Button className={styles.subButton}>실외</Button>
                             <Button className={styles.subButton}>산책하기</Button>
                           </div>
-                          <Typography className={styles.date}>D-6</Typography>
+                          <Typography className={styles.date}>D-2</Typography>
                       </Grid>
                     </Info>
                     <Item mt={12}>

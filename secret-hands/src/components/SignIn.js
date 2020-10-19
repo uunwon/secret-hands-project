@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {purple} from '@material-ui/core/colors';
 import logo from '../images/logo.png';
+import Appbar from './Appbar';
 
 function Copyright() {
     return (
@@ -52,82 +53,85 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
     const classes = useStyles();
     return (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <div className={classes.paper}>
-                <Avatar className={classes.avatar} alt="user_logo" src={logo} />
-                <Typography component="h1" variant="h5">
-                    로그인
-                </Typography>
-                <form className={classes.form} noValidate>
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="ID"
-                        label="ID"
-                        name="ID"
-                        autoComplete="ID"
-                        autoFocus
-                    />
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                    />
-                    <div style={{ padding: 10 }}>
-                        <Grid container>
-                        </Grid>
-                    </div>
-                    <Grid container>
-                        <Grid item xs={2}>
-                        </Grid>
-                        <Grid item xs>
-                            <FacebookIcon fontSize="large" color="primary"/>
-                        </Grid>
-                        <Grid item xs>
-                            <FcGoogle size={35} />
-                        </Grid>
-                        <Grid item xs>
-                            <RiKakaoTalkFill size={35} style={{fill: 'black'}}/>
-                        </Grid>
-                    </Grid>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        style={{backgroundColor:purple[300],
-                        color:"white"}}
-                        className={classes.submit}
-                    >
+        <div>
+            <Appbar />
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div className={classes.paper}>
+                    <Avatar className={classes.avatar} alt="user_logo" src={logo} />
+                    <Typography component="h1" variant="h5">
                         로그인
-                    </Button>
+                    </Typography>
+                    <form className={classes.form} noValidate>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="ID"
+                            label="ID"
+                            name="ID"
+                            autoComplete="ID"
+                            autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                        />
+                        <div style={{ padding: 10 }}>
+                            <Grid container>
+                            </Grid>
+                        </div>
+                        <Grid container>
+                            <Grid item xs={2}>
+                            </Grid>
+                            <Grid item xs>
+                                <FacebookIcon fontSize="large" color="primary"/>
+                            </Grid>
+                            <Grid item xs>
+                                <FcGoogle size={35} />
+                            </Grid>
+                            <Grid item xs>
+                                <RiKakaoTalkFill size={35} style={{fill: 'black'}}/>
+                            </Grid>
+                        </Grid>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            style={{backgroundColor:purple[300],
+                            color:"white"}}
+                            className={classes.submit}
+                        >
+                            로그인
+                        </Button>
 
-                    <Grid container>
-                        <Grid item>
-                            <RouteLink to="#" variant="body2" style={{textDecoration:'none'}}>
-                            아이디/비밀번호 찾기
-                            </RouteLink>
+                        <Grid container>
+                            <Grid item>
+                                <RouteLink to="#" variant="body2" style={{textDecoration:'none'}}>
+                                아이디/비밀번호 찾기
+                                </RouteLink>
+                            </Grid>
+                            <Grid item xs={6}></Grid>
+                            <Grid item xs>
+                                <RouteLink to="SignUp" variant="body2" style={{textDecoration:'none'}}>
+                                    {" 회원가입"}
+                                </RouteLink>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={6}></Grid>
-                        <Grid item xs>
-                            <RouteLink to="SignUp" variant="body2" style={{textDecoration:'none'}}>
-                                {" 회원가입"}
-                            </RouteLink>
-                        </Grid>
-                    </Grid>
-                </form>
-            </div>
-            <Box mt={8}>
-                <Copyright />
-            </Box>
-        </Container>
+                    </form>
+                </div>
+                <Box mt={8}>
+                    <Copyright />
+                </Box>
+            </Container>
+        </div>
     );
 }

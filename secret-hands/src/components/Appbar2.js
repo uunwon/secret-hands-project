@@ -12,11 +12,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import PetsRoundedIcon from '@material-ui/icons/PetsRounded';
-import MenuIcon from '@material-ui/icons/Menu';
+import ApartmentIcon from '@material-ui/icons/Apartment';
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import Button from '@material-ui/core/Button';
-import DomainIcon from '@material-ui/icons/Domain';
 import Avatar from '@material-ui/core/Avatar';
-import Logo from '../images/logo.png'
+import Logo from '../images/logo2.png'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -110,21 +110,21 @@ export default function PrimarySearchAppBar() {
           color="inherit" >
           <PetsRoundedIcon />
         </IconButton>
-        <p><Link to = "/MainCompany" className={classes.link}>단체용</Link></p>
+        <p><Link to = "/MainCompany" className={classes.link}>HOME</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton
           color="inherit" >
-          <MenuIcon />
+          <ApartmentIcon />
         </IconButton>
-        <p><Link to = "/MyDonation" className={classes.link}>후원 내역</Link></p>
+        <p><Link to = "/RegisterCompany" className={classes.link}>단체등록</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton
           color="inherit" >
-          <DomainIcon />
+          <LocalHospitalIcon />
         </IconButton>
-        <p><Link to = "/MySupport" className={classes.link}>봉사 내역</Link></p>
+        <p><Link to = "/RegisterVolunteer" className={classes.link}>봉사등록</Link></p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
       <IconButton
@@ -166,12 +166,14 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Button className={classes.button} color="inherit">
-            <Link to = "/MainCompany" className={classes.link}>단체용</Link>
+              <Link to = "/MainCompany" className={classes.link}>HOME</Link>
             </Button>
             <Button className={classes.button} color="inherit">
-              <Link to = "/MyDonation" className={classes.link}>후원 내역</Link></Button>
+              <Link to = "/RegisterCompany" className={classes.link}>단체등록</Link>
+            </Button>
             <Button className={classes.button} color="inherit">
-              <Link to = "/MySupport" className={classes.link}>봉사 내역</Link></Button>
+              <Link to = "/RegisterVolunteer" className={classes.link}>봉사등록</Link>
+            </Button>
             <Link to = "/SignIn" style={{color: 'inherit'}}><IconButton
               edge="end"
               aria-label="account of current user"
