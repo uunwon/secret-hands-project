@@ -2,7 +2,16 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
 import Appbar from './Appbar2';
 import '../index.css'
 
@@ -53,16 +62,61 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'paybooc-Medium',
       },
       subTitle4: {
-        margin: 30,
         marginLeft: 50,
         fontSize: 17,
         fontWeight: 'bold',
         fontFamily: 'paybooc-Medium',
       },
+      textControl: {
+        marginTop: 15,
+        marginLeft: 50,
+        minWidth: 240,
+      },
+      textField: {
+        marginTop: 15,
+        marginLeft: 50,
+        marginRight: theme.spacing(6),
+      },
+      caption: {
+        marginTop: 10,
+        marginLeft: 50,
+        marginRight: theme.spacing(6),
+        marginBottom: 50,
+        fontSize: 12,
+        fontFamily: 'paybooc-Light',
+      },
+      input:{
+        marginTop: 15,
+        minHeight: 55,
+        fontWeight: 'bold',
+        fontFamily: 'paybooc-Medium',
+        marginRight: theme.spacing(1),
+      },
+      input2: {
+        marginTop: 15,
+        minHeight: 55,
+        fontWeight: 'bold',
+        fontFamily: 'paybooc-Medium',
+        marginRight: theme.spacing(2),
+      },
+      font: {
+        fontFamily: 'paybooc-ExtraBold',
+      },
 }));
 
 export default function FullWidthGrid() {
   const styles = useStyles();
+  const [age, setAge] = React.useState('');
+  const [state, setState] = React.useState({
+    checkedA: false,
+    checkedB: false,
+    checkedC: false,
+  });
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
 
   return (
     <div
@@ -82,17 +136,22 @@ export default function FullWidthGrid() {
           <Typography className={styles.subTitle3}>
             동물보호센터 조회 </Typography> <hr />
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
-            - </Typography> 
-
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
-            - </Typography> 
-
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
-            보호센터명 </Typography> 
-
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
-            보호센터주소 </Typography> 
+            <form noValidate autoComplete="off" style={{ marginTop:40, marginBottom:70 }}>
+              <TextField className={styles.textField} id="outlined-basic" variant="outlined"
+                        style={{ marginRight:10 }} />
+              <input
+                accept="image/*"
+                className={ styles.input }
+                style={{ display:'none' }}
+                id="contained-button-file"
+                multiple
+                type="file"
+              />
+              <label htmlFor="contained-button-file">
+                <Button className={ styles.input } variant="outlined" component="span">
+                  조회
+                </Button>
+              </label> </form>
         </Box>
 
         <Typography className={styles.subTitle2}>
@@ -102,45 +161,98 @@ export default function FullWidthGrid() {
           <Typography className={styles.subTitle3}>
             후원 계좌 등록 </Typography> <hr />
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+          <Typography className={styles.subTitle4} style={{ marginTop:40 }}>
             은행 선택 </Typography> 
+          <FormControl variant="outlined" className={styles.textControl}>
+          <InputLabel id="demo-simple-select-outlined-label">선택해주세요</InputLabel>
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            value={age}
+            onChange={handleChange}
+            >
+            <MenuItem value={10}>기업은행</MenuItem>
+            <MenuItem value={20}>신한은행</MenuItem>
+            <MenuItem value={30}>우리은행</MenuItem>
+            <MenuItem value={40}>국민은행</MenuItem>
+            <MenuItem value={50}>카카오뱅크</MenuItem>
+          </Select>
+          </FormControl>
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+          <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             계좌번호 입력 </Typography> 
+            <form noValidate autoComplete="off">
+              <TextField className={styles.textField} id="outlined-basic" variant="outlined" placeholder="-없이 입력"
+                        style={{ display:'flex' }} /> </form>
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
-            에금주 </Typography>
+          <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
+            예금주 </Typography>
+            <form noValidate autoComplete="off">
+              <TextField className={styles.textField} id="outlined-basic" variant="outlined"
+                        style={{ display:'flex', marginBottom:50 }} /> </form>
         </Box>
 
         <Box border={1} style={{marginTop: 50}}>
           <Typography className={styles.subTitle3}>
             후원금 사용 계획 </Typography> <hr />
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+          <Typography className={styles.subTitle4} style={{ marginTop:40 }}>
             1. 어느 분야에 이용되나요? </Typography> 
-
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+            <Button variant="outlined" className={styles.input2} style={{marginLeft:50}} >동물 구조</Button>
+            <Button variant="outlined" className={styles.input2} >치료와 돌봄</Button>
+            <Button variant="outlined" className={styles.input2} >입양 및 캠페인</Button>
+        
+          <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             2. 상세 설명 </Typography> 
+          <form noValidate autoComplete="off">
+            <TextField className={styles.textField} id="outlined-basic" variant="outlined" multiline rows={10}
+                      style={{ display:'flex', marginBottom:50, marginTop:20 }}  /> </form>
         </Box>
 
         <Typography className={styles.subTitle2}>
           우리 단체는요... </Typography> <hr style={{ marginBottom:30 }}/>
 
-        <Box border={1} style={{ marginBottom:50 }}>
+        <Box border={1} style={{ marginBottom:30 }}>
           <Typography className={styles.subTitle3}>
             단체 소개 </Typography> <hr />
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+          <Typography className={styles.subTitle4} style={{ marginTop:40 }}>
             1. 홈페이지 </Typography> 
+            <form noValidate autoComplete="off">
+              <TextField className={styles.textField} id="outlined-basic" variant="outlined"
+                        style={{ minWidth:285 }} placeholder="링크를 입력해주세요." /> </form>
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+          <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             2. 단체 소개말 </Typography> 
+            <form noValidate autoComplete="off">
+            <TextField className={styles.textField} id="outlined-basic" variant="outlined" multiline rows={10}
+                      style={{ display:'flex' }} placeholder="단체에 대해 상세히 소개해주세요. ex) 규모" /> </form>
 
-          <Typography className={styles.subTitle4} style={{ marginTop:50 }}>
+          <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             3. 단체 소개 사진 첨부하기 (최대 5장 등록 가능) </Typography> 
+            <form noValidate autoComplete="off">
+              <TextField className={styles.textField} id="outlined-basic" variant="outlined"
+                        style={{ marginRight:10 }} />
+              <input
+                accept="image/*"
+                className={ styles.input }
+                style={{ display:'none' }}
+                id="contained-button-file"
+                multiple
+                type="file"
+              />
+              <label htmlFor="contained-button-file">
+                <Button className={ styles.input } variant="outlined" component="span">
+                  찾아보기
+                </Button>
+              </label> </form>
+              <Typography className={styles.caption}>*첫번째 선택한 이미지는 봉사자에게 처음으로 노출되는 이미지이니, 신중하게 선택해주세요 :D</Typography>
         </Box>
-        
-      </div>
+
+        <div style={{margin: 'auto', textAlign: 'center'}}>
+          <Button variant="outlined" className={styles.input} style={{ marginBottom:30, paddingLeft:25, paddingRight:25}}>저장</Button>
+        </div>
+        </div>
     </div>
   );
 }
