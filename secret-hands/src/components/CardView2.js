@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded';
-import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBordered';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Appbar from './Appbar';
@@ -75,10 +74,6 @@ const useStyles = makeStyles(() => ({
 export default function FullWidthGrid() {
   const styles = useStyles();
   const shadowStyles = useFadedShadowStyles();
-  const borderedGridStyles = useGutterBorderedGridStyles({
-    borderColor: 'rgba(0, 0, 0, 0.08)',
-    height: '50%',
-  });
 
   return (
     <div>

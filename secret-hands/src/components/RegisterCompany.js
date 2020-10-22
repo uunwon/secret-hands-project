@@ -1,15 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { grey } from '@material-ui/core/colors';
+import { Link } from 'react-router-dom';
+import { grey, purple } from '@material-ui/core/colors';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import Appbar from './Appbar2';
@@ -102,6 +100,10 @@ const useStyles = makeStyles((theme) => ({
       font: {
         fontFamily: 'paybooc-ExtraBold',
       },
+      link: {
+        textDecoration: 'none',
+        color:'inherit',
+      },
 }));
 
 export default function FullWidthGrid() {
@@ -148,10 +150,9 @@ export default function FullWidthGrid() {
                 type="file"
               />
               <label htmlFor="contained-button-file">
-                <Button className={ styles.input } variant="outlined" component="span">
-                  조회
-                </Button>
-              </label> </form>
+              <Button className={ styles.input } variant="outlined" component="span"> 조회 </Button> </label>
+              <Button className={ styles.input } color="secondary" variant="outlined" component="span">
+              <Link to = "/RegisterIndividualCompany" className={styles.link}>사설보호소 등록</Link> </Button> </form>
         </Box>
 
         <Typography className={styles.subTitle2}>
@@ -163,6 +164,7 @@ export default function FullWidthGrid() {
 
           <Typography className={styles.subTitle4} style={{ marginTop:40 }}>
             은행 선택 </Typography> 
+          <form noValidate autoComplete="off">
           <FormControl variant="outlined" className={styles.textControl}>
           <InputLabel id="demo-simple-select-outlined-label">선택해주세요</InputLabel>
           <Select
@@ -181,13 +183,11 @@ export default function FullWidthGrid() {
 
           <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             계좌번호 입력 </Typography> 
-            <form noValidate autoComplete="off">
               <TextField className={styles.textField} id="outlined-basic" variant="outlined" placeholder="-없이 입력"
-                        style={{ display:'flex' }} /> </form>
+                        style={{ display:'flex' }} />
 
           <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             예금주 </Typography>
-            <form noValidate autoComplete="off">
               <TextField className={styles.textField} id="outlined-basic" variant="outlined"
                         style={{ display:'flex', marginBottom:50 }} /> </form>
         </Box>
@@ -198,13 +198,13 @@ export default function FullWidthGrid() {
 
           <Typography className={styles.subTitle4} style={{ marginTop:40 }}>
             1. 어느 분야에 이용되나요? </Typography> 
+            <form noValidate autoComplete="off">
             <Button variant="outlined" className={styles.input2} style={{marginLeft:50}} >동물 구조</Button>
             <Button variant="outlined" className={styles.input2} >치료와 돌봄</Button>
             <Button variant="outlined" className={styles.input2} >입양 및 캠페인</Button>
         
           <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             2. 상세 설명 </Typography> 
-          <form noValidate autoComplete="off">
             <TextField className={styles.textField} id="outlined-basic" variant="outlined" multiline rows={10}
                       style={{ display:'flex', marginBottom:50, marginTop:20 }}  /> </form>
         </Box>
@@ -220,17 +220,15 @@ export default function FullWidthGrid() {
             1. 홈페이지 </Typography> 
             <form noValidate autoComplete="off">
               <TextField className={styles.textField} id="outlined-basic" variant="outlined"
-                        style={{ minWidth:285 }} placeholder="링크를 입력해주세요." /> </form>
+                        style={{ minWidth:285 }} placeholder="링크를 입력해주세요." />
 
           <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             2. 단체 소개말 </Typography> 
-            <form noValidate autoComplete="off">
             <TextField className={styles.textField} id="outlined-basic" variant="outlined" multiline rows={10}
-                      style={{ display:'flex' }} placeholder="단체에 대해 상세히 소개해주세요. ex) 규모" /> </form>
+                      style={{ display:'flex' }} placeholder="단체에 대해 상세히 소개해주세요. ex) 규모" />
 
           <Typography className={styles.subTitle4} style={{ marginTop:30 }}>
             3. 단체 소개 사진 첨부하기 (최대 5장 등록 가능) </Typography> 
-            <form noValidate autoComplete="off">
               <TextField className={styles.textField} id="outlined-basic" variant="outlined"
                         style={{ marginRight:10 }} />
               <input

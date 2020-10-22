@@ -7,6 +7,7 @@ import MyDonation from './components/MyDonation';
 import MySupport from './components/MySupport';
 import MainCompany from './components/MainCompany';
 import RegisterVolunteer from './components/RegisterVolunteer';
+import RegisterIndividualCompany from './components/RegisterIndividualCompany';
 import RegisterCompany from './components/RegisterCompany';
 import './App.css';
 
@@ -22,6 +23,7 @@ class App extends Component{
             <Route path="/MyDonation" component={MyDonation} />
             <Route path="/MainCompany" component={MainCompany} />
             <Route path="/RegisterCompany" component={RegisterCompany} />
+            <Route path="/RegisterIndividualCompany" component={RegisterIndividualCompany} />
             <Route path="/RegisterVolunteer" component={RegisterVolunteer} />
         </Router>
       </div>
