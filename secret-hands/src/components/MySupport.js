@@ -10,8 +10,18 @@ import Box from '@material-ui/core/Box';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Appbar from './Appbar';
-import Card from "./Card"
+import Card from "./Cards/Card"
+import Card2 from "./Cards/Card2";
+import Card3 from "./Cards/Card3";
+import Card4 from "./Cards/Card4";
+import Card5 from "./Cards/Card5";
+import Card6 from "./Cards/Card6";
+import DCard from "./Cards/DCard";
+import DCard2 from "./Cards/DCard2";
+import DCard3 from "./Cards/DCard3";
+import DCard4 from "./Cards/DCard4";
+import DCard5 from "./Cards/DCard5";
+import DCard6 from "./Cards/DCard6";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -81,82 +91,79 @@ export default function MySupport() {
     };
 
     return (
-        <div>
-            <Appbar />
-            <React.Fragment>
-                <CssBaseline />
-                <Container maxWidth="lg" >
-                    <AppBar className={classes.paper} position="static" color="default">
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            indicatorColor="secondary"
-                            variant="fullWidth"
-                            aria-label="full width tabs"
-                        >
-                            <Tab
-                                style={{color:"black"}}
-                                label="예약한 봉사" {...a11yProps(0)} />
-                            <Tab
-                                label="봉사내역" {...a11yProps(1)} />
-                        </Tabs>
-                    </AppBar>
-                    <SwipeableViews
-                        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                        index={value}
-                        onChangeIndex={handleChangeIndex}
+        <React.Fragment>
+            <CssBaseline />
+            <Container maxWidth="lg" >
+                <AppBar className={classes.paper} position="static" color="default">
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        indicatorColor="secondary"
+                        variant="fullWidth"
+                        aria-label="full width tabs"
                     >
-                        <TabPanel value={value} index={0} dir={theme.direction}>
-                            <Grid container spacing={10}>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
+                        <Tab
+                            style={{color:"black"}}
+                            label="예약한 봉사" {...a11yProps(0)} />
+                        <Tab
+                            label="봉사내역" {...a11yProps(1)} />
+                    </Tabs>
+                </AppBar>
+                <SwipeableViews
+                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                    index={value}
+                    onChangeIndex={handleChangeIndex}
+                >
+                    <TabPanel value={value} index={0} dir={theme.direction}>
+                        <Grid container spacing={10}>
+                            <Grid item xs={4}>
+                                <Card/>
                             </Grid>
-                            <Grid container spacing={10}>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
+                            <Grid item xs={4}>
+                                <Card3/>
                             </Grid>
-                        </TabPanel>
-                        <TabPanel value={value} index={1} dir={theme.direction}>
-                            <Grid container spacing={10}>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
+                            <Grid item xs={4}>
+                                <Card5/>
                             </Grid>
-                            <Grid container spacing={10}>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Card/>
-                                </Grid>
+                        </Grid>
+                        <Grid container spacing={10}>
+                            <Grid item xs={4}>
+                                <Card2/>
                             </Grid>
-                        </TabPanel>
-                    </SwipeableViews>
-                </Container>
-            </React.Fragment>
-        </div>
+                            <Grid item xs={4}>
+                                <Card4/>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Card6/>
+                            </Grid>
+                        </Grid>
+                    </TabPanel>
+                    <TabPanel value={value} index={1} dir={theme.direction}>
+                        <Grid container spacing={10}>
+                            <Grid item xs={4}>
+                                <DCard/>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <DCard2/>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <DCard3/>
+                            </Grid>
+                        </Grid>
+                        <Grid container spacing={10}>
+                            <Grid item xs={4}>
+                                <DCard4/>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <DCard5/>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <DCard6/>
+                            </Grid>
+                        </Grid>
+                    </TabPanel>
+                </SwipeableViews>
+            </Container>
+        </React.Fragment>
     );
 }
